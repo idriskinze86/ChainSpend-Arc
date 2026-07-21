@@ -29,24 +29,20 @@ function ConnectWallet({
   }
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      console.log("Clicked:", event.target);
+  function handleClickOutside(event) {
+    if (!showWalletMenu) return;
 
-      if (!showWalletMenu) return;
-
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        console.log("Closing menu");
-        setShowWalletMenu(false);
-      }
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setShowWalletMenu(false);
     }
+  }
 
-    document.addEventListener("mousedown", handleClickOutside);
+  document.addEventListener("mousedown", handleClickOutside);
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showWalletMenu, setShowWalletMenu]);
-
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [showWalletMenu, setShowWalletMenu]);
   return (
     <div ref={menuRef} className="wallet-container">
       <button
