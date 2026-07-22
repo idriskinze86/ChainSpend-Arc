@@ -1,17 +1,17 @@
 # ChainSpend-Arc
 
+An on-chain expense tracking application built on Arc Testnet.
+
 ## Overview
 
-ChainSpend-Arc is an on-chain expense tracking application deployed on Arc Testnet. It enables users to securely record expenses on-chain with details such as amount, token, category, note, and timestamp.
-
-The project demonstrates transparent and immutable expense tracking using smart contracts on Arc.
+ChainSpend-Arc enables users to securely record expenses on-chain with details such as amount, token, category, note, and timestamp. By storing expenses on-chain, the application provides transparency, immutability, and an auditable transaction history.
 
 ## Features
 
 - Record expenses on-chain
 - Categorize expenses
-- Store notes for each expense
-- Immutable transaction history
+- Add notes to each expense
+- Immutable expense history
 - Wallet integration
 - Deployed and verified on Arc Testnet
 
@@ -40,22 +40,26 @@ build/
 
 ## Installation
 
-Clone the repository:
+### Clone the repository
 
 git clone https://github.com/idriskinze86/ChainSpend-Arc.git
-Navigate into the project:
+
+### Navigate to the project
 
 cd ChainSpend-Arc
-Install dependencies:
+
+### Install dependencies
 
 npm install
 
 ## Environment Variables
 
-Create a .env file in the project root and add:
+Create a .env file in the project root:
 
 RPC_URL=https://rpc.blockdaemon.testnet.arc.network
 PRIVATE_KEY=your_private_key_here
+
+> Important: Never commit your real private key to GitHub.
 
 ## Compile the Contract
 
@@ -65,11 +69,11 @@ node scripts/compile.js
 
 node scripts/deploy.js
 
-## Verify the Contract
+## Contract Verification
 
-The contract has already been verified on ArcScan.
+The contract has been successfully verified on ArcScan.
 
-Contract Address:
+Verified Contract Address:
 
 0x313FFf8332B6028D8793979DF16eC08793053dda
 
