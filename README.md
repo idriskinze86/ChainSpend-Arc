@@ -1,131 +1,86 @@
-# 💸 ChainSpend
+# ChainSpend-Arc
 
-A decentralized expense tracker built on the Monad Testnet that enables users to securely record, manage, search, and export expenses on-chain using an EVM-compatible wallet.
+## Overview
 
-![Home](screenshots/home.png)
+ChainSpend-Arc is an on-chain expense tracking application deployed on Arc Testnet. It enables users to securely record expenses on-chain with details such as amount, token, category, note, and timestamp.
 
----
+The project demonstrates transparent and immutable expense tracking using smart contracts on Arc.
 
-## 🔗 Links
+## Features
 
-- 🌐 Live Demo: https://chainspend.vercel.app
-- 💻 Source Code: https://github.com/idriskinze86/ChainSpend
+- Record expenses on-chain
+- Categorize expenses
+- Store notes for each expense
+- Immutable transaction history
+- Wallet integration
+- Deployed and verified on Arc Testnet
 
----
+## Smart Contract
 
-## ✨ Features
+Network: Arc Testnet
 
-- 🔐 Connect with Rabby Wallet or any EVM-compatible wallet
-- ⛓️ Secure on-chain expense storage
-- 📊 Dashboard with expense statistics
-- 🔍 Search expenses by token, category, or note
-- 📤 Export expense history as CSV
-- 🔔 Toast notifications for user actions
-- 🌐 Automatic Monad Testnet network validation
-- 📱 Responsive and modern user interface
+Contract Address:
 
----
+0x313FFf8332B6028D8793979DF16eC08793053dda
 
-## 📸 Screenshots
-
-### 🏠 Home
-
-Shows the landing page before connecting a wallet.
-
-![Home](screenshots/home.png)
-
-### 🔗 Wallet Connected
-
-Displays a connected wallet and wallet management options.
-
-![Wallet Connected](screenshots/wallet-connected.png)
-
-### 📊 Dashboard
-
-Overview of expenses, spending statistics, and expense history.
-
-![Dashboard](screenshots/dashboard.png)
-
-### 🔍 Search Expenses
-
-Quickly filter expenses by token, category, or note.
-
-![Search](screenshots/search.png)
-
-### 📤 CSV Export
-
-Export expense history to a CSV file.
-
-![CSV Export](screenshots/csv-export.png)
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-
-- React
-- Vite
-- Ethers.js
-- CSS
-
-### Blockchain
+## Tech Stack
 
 - Solidity
-- Hardhat
-- Monad Testnet
+- Ethers.js
+- Node.js
+- JavaScript
+- Arc Testnet
 
-### Deployment
+## Project Structure
 
-- Vercel
+contracts/
+frontend/
+scripts/
+build/
 
----
+## Installation
 
-## 🚀 Getting Started
+Clone the repository:
 
-### Clone the repository
+git clone https://github.com/idriskinze86/ChainSpend-Arc.git
+Navigate into the project:
 
-git clone https://github.com/idriskinze86/ChainSpend.git
-
-### Install dependencies
+cd ChainSpend-Arc
+Install dependencies:
 
 npm install
 
-### Start the development server
+## Environment Variables
 
-## npm run dev
+Create a .env file in the project root and add:
 
-## 📂 Project Structure
+RPC_URL=https://rpc.blockdaemon.testnet.arc.network
+PRIVATE_KEY=your_private_key_here
 
-ChainSpend/
-├── contracts/ # Solidity smart contracts
-├── frontend/ # React + Vite application
-├── screenshots/ # README screenshots
-├── scripts/ # Deployment and utility scripts
-├── DEPLOYMENTS.md
-├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.md
+## Compile the Contract
 
----
+node scripts/compile.js
 
-## 🔮 Roadmap
+## Deploy the Contract
 
-- 📈 Spending charts and analytics
-- 🌙 Dark mode
-- 📅 Monthly spending reports
-- 💱 Live token price conversion
-- 📱 Progressive Web App (PWA)
+node scripts/deploy.js
 
----
+## Verify the Contract
 
-## 👨‍💻 Author
+The contract has already been verified on ArcScan.
 
-Adepegba Idris
+Contract Address:
 
-GitHub: https://github.com/idriskinze86
+0x313FFf8332B6028D8793979DF16eC08793053dda
 
----
+## Future Improvements
 
-Built with ❤️ on Monad Testnet.
+- Expense analytics dashboard
+- USDC payment support
+- Better filtering and search
+- Multi-user support
+- Mainnet deployment
+
+## License
+
+MIT
