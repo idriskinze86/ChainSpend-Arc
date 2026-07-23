@@ -1,90 +1,201 @@
-# ChainSpend-Arc
+# 💸 ChainSpend
 
-An on-chain expense tracking application built on Arc Testnet.
+ChainSpend is a decentralized Web3 expense tracker that enables users to securely record, organize, and manage crypto expenses directly on-chain.
 
-## Overview
+This version is powered by Arc Testnet, showcasing fast, transparent, and wallet-specific expense tracking on Arc's EVM-compatible infrastructure.
 
-ChainSpend-Arc enables users to securely record expenses on-chain with details such as amount, token, category, note, and timestamp. By storing expenses on-chain, the application provides transparency, immutability, and an auditable transaction history.
+---
 
-## Features
+## ✨ Features
 
-- Record expenses on-chain
-- Categorize expenses
-- Add notes to each expense
-- Immutable expense history
-- Wallet integration
-- Deployed and verified on Arc Testnet
+- 🔐 Wallet-based authentication
+- 💰 Record crypto expenses on-chain
+- 📂 Categorize expenses
+- 📝 Add notes to every expense
+- 📊 Dashboard showing total expenses and total spending
+- 🔍 Search expense history
+- 📤 Export expenses as CSV
+- ⚡ Powered by Arc Testnet
 
-## Smart Contract
+---
 
-Network: Arc Testnet
+## 🚀 Why Arc?
 
-Contract Address:
+Arc provides a secure and EVM-compatible environment that enables developers to build decentralized applications using familiar Ethereum tooling.
 
-0x313FFf8332B6028D8793979DF16eC08793053dda
+ChainSpend leverages Arc to provide:
 
-## Tech Stack
+- Transparent on-chain expense records
+- Wallet-specific expense history
+- Secure transaction storage
+- Fast and reliable user experience
+- A scalable foundation for future growth
+
+---
+
+## 🌍 Vision
+
+ChainSpend is built on Arc Testnet today, with an architecture designed to support additional EVM-compatible networks in the future.
+
+Our goal is to provide a seamless, transparent, and secure expense tracking experience that can scale across multiple blockchain ecosystems while maintaining a consistent user experience.
+
+---
+
+## 🛣️ Roadmap
+
+- ✅ Arc Testnet (Current)
+- 🔄 Monad Testnet
+- 🔄 Ethereum Sepolia
+- 🔄 Additional EVM-compatible networks
+
+---
+
+## 📡 Live Deployment
+
+| Network     | Contract Address                           |
+| ----------- | ------------------------------------------ |
+| Arc Testnet | 0x708ac00dAcd90D898F14843D339Eb6D0aE2fB743 |
+
+---
+
+## 📁 Project Structure
+
+ChainSpend-Arc/
+├── contracts/
+│ └── ExpenseTracker.sol
+├── scripts/
+│ ├── compile.js
+│ └── deploy.js
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── lib/
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ ├── public/
+│ └── index.html
+├── build/
+├── .env
+├── package.json
+└── README.md
+
+---
+
+## 🛠️ Tech Stack
 
 - Solidity
+- React
+- Vite
 - Ethers.js
-- Node.js
-- JavaScript
+- Rabby Wallet
 - Arc Testnet
 
-## Project Structure
+---
 
-contracts/
-frontend/
-scripts/
-build/
-
-## Installation
-
-### Clone the repository
+## 🌐 Clone the Repository
 
 git clone https://github.com/idriskinze86/ChainSpend-Arc.git
-
-### Navigate to the project
-
 cd ChainSpend-Arc
 
-### Install dependencies
+---
+
+## ⚙️ Environment Variables
+
+Create a .env file in the project root.
+
+RPC_URL=https://rpc.blockdaemon.testnet.arc.network
+PRIVATE_KEY=YOUR_PRIVATE_KEY
+
+> ⚠️ Never commit your private key or other secrets to GitHub.
+
+---
+
+## 🚀 Installation
+
+### Install project dependencies
 
 npm install
 
-## Environment Variables
+### Install frontend dependencies
 
-Create a .env file in the project root:
+cd frontend
+npm install
 
-RPC_URL=https://rpc.blockdaemon.testnet.arc.network
-PRIVATE_KEY=your_private_key_here
+### Start the frontend
 
-> Important: Never commit your real private key to GitHub.
+npm run dev
 
-## Compile the Contract
+### Compile the smart contract
 
+cd ..
 node scripts/compile.js
 
-## Deploy the Contract
+### Deploy the smart contract
 
-node scripts/deploy.js
+## node scripts/deploy.js
 
-## Contract Verification
+## 📜 Smart Contract
 
-The contract has been successfully verified on ArcScan.
+Contract Name
 
-Verified Contract Address:
+ExpenseTracker
 
-0x313FFf8332B6028D8793979DF16eC08793053dda
+### Core Functions
 
-## Future Improvements
+- addExpense() — Records a new expense on-chain.
+- getExpense() — Retrieves an expense by index.
+- getExpenseCount() — Returns the total number of expenses for the connected wallet.
 
-- Expense analytics dashboard
-- USDC payment support
-- Better filtering and search
-- Multi-user support
-- Mainnet deployment
+Each wallet maintains its own independent expense history, ensuring user-specific records while keeping all data transparent and verifiable on-chain.
 
-## License
+---
 
-MIT
+## 🌐 Network Configuration
+
+| Property        | Value       |
+| --------------- | ----------- |
+| Network         | Arc Testnet |
+| Chain ID        | 5042002     |
+| Currency Symbol | ARC         |
+
+---
+
+## 📖 How It Works
+
+1. Connect your EVM wallet (Rabby or another compatible wallet).
+2. Switch to Arc Testnet.
+3. Enter:
+   - Amount
+   - Token
+   - Category
+   - Note
+4. Submit the transaction.
+5. Confirm the transaction in your wallet.
+6. View your on-chain expense history.
+7. Search previous expenses.
+8. Export expenses as a CSV file.
+
+---
+
+## 🔮 Future Improvements
+
+- 🌐 Automatic multi-network detection
+- 🔄 Seamless multi-chain support
+- 📈 Spending analytics and charts
+- 📅 Monthly expense reports
+- 💼 Budget planning and alerts
+- 🤖 AI-powered spending insights
+- 🔗 Cross-chain expense synchronization
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and feedback are welcome.
+Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.

@@ -23,13 +23,14 @@ function App() {
   const [showWalletMenu, setShowWalletMenu] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  async function checkMonadNetwork() {
+  async function checkNetwork() {
     const chainId = await window.ethereum.request({
       method: "eth_chainId",
     });
+    console.log("Current chainId:", chainId);
 
-    if (chainId !== "0x279f") {
-      toast.error("⚠️ Please switch to Monad Testnet.");
+    if (chainId !== "0x4cef52") {
+      toast.error("⚠️ Please switch to Arc Testnet.");
       return false;
     }
 
@@ -37,7 +38,7 @@ function App() {
   }
 
   async function addExpense() {
-    if (!(await checkMonadNetwork())) return;
+    if (!(await checkNetwork())) return;
     try {
       const contract = await getContract();
 
@@ -61,7 +62,7 @@ function App() {
     }
   }
   async function loadExpenses() {
-    if (!(await checkMonadNetwork())) return;
+    if (!(await checkNetwork())) return;
     try {
       const contract = await getContract();
 
@@ -73,11 +74,22 @@ function App() {
       let totalAmount = 0;
 
       for (let i = 0; i < total; i++) {
-        const expense = await contract.getExpense(i);
-        list.push(expense);
+        try {
+          console.log("Fetching expense", i);
 
-        totalAmount += Number(expense[0]);
+          const expense = await contract.getExpense(i);
+
+          console.log("Expense:", expense);
+
+          list.push(expense);
+          totalAmount += Number(expense[0]);
+        } catch (err) {
+          console.error("Failed to fetch expense", i, err);
+          break;
+        }
       }
+      console.log("Total:", total);
+      console.log("Loaded list:", list);
 
       setExpenses(list);
       setTotalSpent(totalAmount);
@@ -173,7 +185,7 @@ function App() {
     link.href = url;
     const today = new Date().toISOString().split("T")[0];
 
-    link.download = `chainspend-expenses-${today}.csv`;
+    link.download = `chainspend-Arc-expenses-${today}.csv`;
 
     toast.success("📤 CSV exported successfully!");
 
@@ -186,13 +198,14 @@ function App() {
 
   return (
     <div className="App">
-      <Toaster psition="top-right" />
+      <Toaster position="top-right" />
       <div className="hero">
-        <h1>💸 ChainSpend</h1>
+        <h1>💸 ChainSpend-Arc</h1>
 
         <p>
-          Track your crypto expenses securely on
-          <strong> Monad Testnet</strong>.
+          Track your crypto expenses securely across EVM networks.
+          <br />
+          <strong>Currently powered by Arc Testnet.</strong>
         </p>
         <ConnectWallet
           account={account}

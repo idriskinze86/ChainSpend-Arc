@@ -18,7 +18,6 @@ const input = {
     },
   },
 };
-fs.writeFileSync("build/standard-input.json", JSON.stringify(input, null, 2));
 
 const output = JSON.parse(solc.compile(JSON.stringify(input)));
 
@@ -37,4 +36,11 @@ fs.writeFileSync(
   JSON.stringify(contract, null, 2),
 );
 
+// 👇 Copy ABI to frontend automatically
+fs.writeFileSync(
+  "frontend/src/lib/abi.json",
+  JSON.stringify(contract.abi, null, 2),
+);
+
 console.log("✅ Compiled successfully!");
+console.log("✅ Frontend ABI updated!");

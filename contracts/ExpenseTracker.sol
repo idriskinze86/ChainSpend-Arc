@@ -49,30 +49,31 @@ contract ExpenseTracker {
         );
     }
 
-    function getExpense(
-        uint256 index
+   function getExpense(
+    uint256 index
+)
+    public
+    view
+    returns (
+        uint256,
+        string memory,
+        string memory,
+        string memory,
+        uint256
     )
-        public
-        view
-        returns (
-            uint256,
-            string memory,
-            string memory,
-            string memory,
-            uint256
-        )
-    {
-        Expense memory e = expenses[msg.sender][index];
+{
+    require(index < expenses[msg.sender].length, "Invalid expense index");
 
-        return (
-            e.amount,
-            e.token,
-            e.category,
-            e.note,
-            e.timestamp
-        );
-    }
+    Expense memory e = expenses[msg.sender][index];
 
+    return (
+        e.amount,
+        e.token,
+        e.category,
+        e.note,
+        e.timestamp
+    );
+}
     function getExpenseCount()
         public
         view

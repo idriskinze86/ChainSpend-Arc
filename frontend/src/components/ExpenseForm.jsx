@@ -17,28 +17,28 @@ function ExpenseForm({
 
       <input
         type="number"
-        placeholder="Amount"
+        placeholder="Enter Amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
 
       <input
         type="text"
-        placeholder="Token (e.g. MON)"
+        placeholder="Enter token symbol (e.g. ARC, ETH, USDC)"
         value={token}
         onChange={(e) => setToken(e.target.value)}
       />
 
       <input
         type="text"
-        placeholder="Category (e.g. Food)"
+        placeholder="Category (e.g. Food, Transport, Gas Fees)"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
 
       <input
         type="text"
-        placeholder="Note"
+        placeholder="Note (What was this expense for?)"
         value={note}
         onChange={(e) => setNote(e.target.value)}
       />
