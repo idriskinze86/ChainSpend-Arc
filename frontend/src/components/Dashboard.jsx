@@ -8,7 +8,7 @@ function Dashboard({ expenseCount, totalSpent }) {
 
       <div className="dashboard-card">
         <h3>💰 Total Spent</h3>
-        <h1>{totalSpent} TOKEN</h1>
+        <h1>{totalSpent} ARC</h1>
       </div>
     </div>
   );

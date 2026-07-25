@@ -75,10 +75,18 @@ contract ExpenseTracker {
     );
 }
     function getExpenseCount()
-        public
-        view
-        returns (uint256)
-    {
-        return expenses[msg.sender].length;
-    }
+    public
+    view
+    returns (uint256)
+{
+    return expenses[msg.sender].length;
+}
+
+function getExpenses()
+    public
+    view
+    returns (Expense[] memory)
+{
+    return expenses[msg.sender];
+}
 }

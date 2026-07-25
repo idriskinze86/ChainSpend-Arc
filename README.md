@@ -54,7 +54,7 @@ Our goal is to provide a seamless, transparent, and secure expense tracking expe
 
 | Network     | Contract Address                           |
 | ----------- | ------------------------------------------ |
-| Arc Testnet | 0x708ac00dAcd90D898F14843D339Eb6D0aE2fB743 |
+| Arc Testnet | 0x72EC997ffB25D63F430A95c69a0B93F5F2d90131 |
 
 ---
 

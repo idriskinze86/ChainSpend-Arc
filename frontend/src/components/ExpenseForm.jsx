@@ -10,6 +10,7 @@ function ExpenseForm({
   addExpense,
   loadExpenses,
   exportCSV,
+  isRefreshing,
 }) {
   return (
     <div className="form-card">
@@ -45,7 +46,9 @@ function ExpenseForm({
 
       <div className="button-group">
         <button onClick={addExpense}>Add Expense</button>
-        <button onClick={loadExpenses}>Load Expenses</button>
+        <button onClick={loadExpenses} disabled={isRefreshing}>
+          {isRefreshing ? "🔄 Refreshing..." : "🔄 Refresh Expenses"}
+        </button>
         <button onClick={exportCSV}>📤 Export CSV</button>
       </div>
     </div>

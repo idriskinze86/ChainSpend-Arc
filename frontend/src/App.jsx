@@ -22,6 +22,7 @@ function App() {
   const [hasLoadedExpenses, setHasLoadedExpenses] = useState(false);
   const [showWalletMenu, setShowWalletMenu] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   async function checkNetwork() {
     const chainId = await window.ethereum.request({
@@ -58,45 +59,42 @@ function App() {
       await loadExpenses();
     } catch (err) {
       console.error(err);
-      alert(err.message);
+
+      toast.error("Unable to reach Arc Testnet. Please refresh and try again.");
+
+      // Uncomment the next line only if you still want the detailed error while debugging.
+      // alert(err.message);
     }
   }
   async function loadExpenses() {
+    console.log("🔥 Refreshing exprenses...");
+    setSearchTerm("");
+
     if (!(await checkNetwork())) return;
+    setIsRefreshing(true);
     try {
       const contract = await getContract();
 
-      const count = await contract.getExpenseCount();
-      const total = Number(count);
+      const list = await contract.getExpenses();
 
-      setExpenseCount(total);
-      let list = [];
-      let totalAmount = 0;
-
-      for (let i = 0; i < total; i++) {
-        try {
-          console.log("Fetching expense", i);
-
-          const expense = await contract.getExpense(i);
-
-          console.log("Expense:", expense);
-
-          list.push(expense);
-          totalAmount += Number(expense[0]);
-        } catch (err) {
-          console.error("Failed to fetch expense", i, err);
-          break;
-        }
-      }
-      console.log("Total:", total);
       console.log("Loaded list:", list);
 
-      setExpenses(list);
+      let totalAmount = 0;
+
+      for (const expense of list) {
+        totalAmount += Number(expense.amount);
+      }
+
+      setExpenseCount(list.length);
+      setExpenses([...list]);
       setTotalSpent(totalAmount);
       setHasLoadedExpenses(true);
+      toast.success("✅ Expenses refreshed!");
+      setIsRefreshing(false);
     } catch (err) {
       console.error(err);
-      alert(err.message);
+
+      toast.error("Unable to load expenses. Please refresh and try again.");
     }
   }
   const filteredExpenses = expenses.filter((expense) => {
@@ -229,6 +227,7 @@ function App() {
         addExpense={addExpense}
         loadExpenses={loadExpenses}
         exportCSV={exportCSV}
+        isRefreshing={isRefreshing}
       />
       <Dashboard expenseCount={expenseCount} totalSpent={totalSpent} />
       <hr />
