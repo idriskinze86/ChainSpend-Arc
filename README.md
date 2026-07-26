@@ -6,6 +6,14 @@ This version is powered by Arc Testnet, showcasing fast, transparent, and wallet
 
 ---
 
+## 🌐 Live Demo
+
+Vercel Deployment:
+
+https://chain-spend-arc.vercel.app/
+
+Experience ChainSpend-Arc live on Arc Testnet by connecting an EVM-compatible wallet such as Rabby Wallet.
+
 ## ✨ Features
 
 - 🔐 Wallet-based authentication
@@ -195,6 +203,12 @@ Contributions, suggestions, and feedback are welcome.
 Feel free to fork the repository, create a feature branch, and submit a pull request.
 
 ---
+
+## 🔗 Project Links
+
+- 🌐 Live Demo: https://chain-spend-arc.vercel.app/
+- 💻 GitHub Repository: https://github.com/idriskinze86/ChainSpend-Arc
+- ⛓️ Network: Arc Testnet
 
 ## 📄 License
 
