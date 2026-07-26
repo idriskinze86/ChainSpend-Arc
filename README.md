@@ -1,8 +1,18 @@
-# 💸 ChainSpend
+# 💸 ChainSpend-Arc
 
-ChainSpend is a decentralized Web3 expense tracker that enables users to securely record, organize, and manage crypto expenses directly on-chain.
+ChainSpend-Arc is a decentralized Web3 expense tracker that enables users to securely record, organize, and manage crypto expenses directly on-chain.
 
-This version is powered by Arc Testnet, showcasing fast, transparent, and wallet-specific expense tracking on Arc's EVM-compatible infrastructure.
+Built on Arc Testnet, ChainSpend-Arc showcases fast, transparent, and wallet-specific expense tracking using Arc's EVM-compatible infrastructure.
+
+---
+
+## 🌐 Live Demo
+
+Live Application:
+
+https://chain-spend-arc.vercel.app/
+
+Experience ChainSpend-Arc on Arc Testnet by connecting an EVM-compatible wallet such as Rabby Wallet.
 
 ---
 
@@ -14,6 +24,7 @@ This version is powered by Arc Testnet, showcasing fast, transparent, and wallet
 - 📝 Add notes to every expense
 - 📊 Dashboard showing total expenses and total spending
 - 🔍 Search expense history
+- 🔄 Refresh on-chain expense records
 - 📤 Export expenses as CSV
 - ⚡ Powered by Arc Testnet
 
@@ -23,25 +34,25 @@ This version is powered by Arc Testnet, showcasing fast, transparent, and wallet
 
 Arc provides a secure and EVM-compatible environment that enables developers to build decentralized applications using familiar Ethereum tooling.
 
-ChainSpend leverages Arc to provide:
+ChainSpend-Arc leverages Arc to provide:
 
 - Transparent on-chain expense records
 - Wallet-specific expense history
 - Secure transaction storage
-- Fast and reliable user experience
+- Fast transaction confirmation on Arc Testnet
 - A scalable foundation for future growth
 
 ---
 
 ## 🌍 Vision
 
-ChainSpend is built on Arc Testnet today, with an architecture designed to support additional EVM-compatible networks in the future.
+ChainSpend-Arc is built on Arc Testnet today, with an architecture designed to support additional EVM-compatible networks in the future.
 
 Our goal is to provide a seamless, transparent, and secure expense tracking experience that can scale across multiple blockchain ecosystems while maintaining a consistent user experience.
 
 ---
 
-## 🛣️ Roadmap
+## 🛣 Roadmap
 
 - ✅ Arc Testnet (Current)
 - 🔄 Monad Testnet
@@ -73,7 +84,8 @@ ChainSpend-Arc/
 │ │ ├── App.jsx
 │ │ └── main.jsx
 │ ├── public/
-│ └── index.html
+│ ├── package.json
+│ └── vite.config.js
 ├── build/
 ├── .env
 ├── package.json
@@ -81,7 +93,7 @@ ChainSpend-Arc/
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - Solidity
 - React
@@ -95,18 +107,17 @@ ChainSpend-Arc/
 ## 🌐 Clone the Repository
 
 git clone https://github.com/idriskinze86/ChainSpend-Arc.git
-cd ChainSpend-Arc
 
----
+## cd ChainSpend-Arc
 
 ## ⚙️ Environment Variables
 
 Create a .env file in the project root.
 
-RPC_URL=https://rpc.blockdaemon.testnet.arc.network
+RPC_URL=https://rpc.testnet.arc.network
 PRIVATE_KEY=YOUR_PRIVATE_KEY
 
-> ⚠️ Never commit your private key or other secrets to GitHub.
+> ⚠️ Never commit your private key or any sensitive information to GitHub.
 
 ---
 
@@ -143,8 +154,8 @@ ExpenseTracker
 ### Core Functions
 
 - addExpense() — Records a new expense on-chain.
-- getExpense() — Retrieves an expense by index.
-- getExpenseCount() — Returns the total number of expenses for the connected wallet.
+- getExpenses() — Retrieves all expenses for the connected wallet.
+- getExpenseCount() — Returns the total number of recorded expenses.
 
 Each wallet maintains its own independent expense history, ensuring user-specific records while keeping all data transparent and verifiable on-chain.
 
@@ -162,7 +173,7 @@ Each wallet maintains its own independent expense history, ensuring user-specifi
 
 ## 📖 How It Works
 
-1. Connect your EVM wallet (Rabby or another compatible wallet).
+1. Connect your EVM-compatible wallet (Rabby Wallet recommended).
 2. Switch to Arc Testnet.
 3. Enter:
    - Amount
@@ -171,9 +182,11 @@ Each wallet maintains its own independent expense history, ensuring user-specifi
    - Note
 4. Submit the transaction.
 5. Confirm the transaction in your wallet.
-6. View your on-chain expense history.
-7. Search previous expenses.
-8. Export expenses as a CSV file.
+6. The dashboard automatically updates.
+7. View your complete on-chain expense history.
+8. Search previous expenses.
+9. Refresh expenses anytime to synchronize with the blockchain.
+10. Export your expense history as a CSV file.
 
 ---
 
@@ -181,9 +194,11 @@ Each wallet maintains its own independent expense history, ensuring user-specifi
 
 - 🌐 Automatic multi-network detection
 - 🔄 Seamless multi-chain support
+- 💰 On-chain budgeting
+- 💳 Remaining balance tracking
+- 🚫 Overspending prevention
 - 📈 Spending analytics and charts
 - 📅 Monthly expense reports
-- 💼 Budget planning and alerts
 - 🤖 AI-powered spending insights
 - 🔗 Cross-chain expense synchronization
 
@@ -192,7 +207,24 @@ Each wallet maintains its own independent expense history, ensuring user-specifi
 ## 🤝 Contributing
 
 Contributions, suggestions, and feedback are welcome.
+
 Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+---
+
+## 🔗 Project Links
+
+- 🌐 Live Demo: https://chain-spend-arc.vercel.app/
+- 💻 GitHub Repository: https://github.com/idriskinze86/ChainSpend-Arc
+- ⛓️ Network: Arc Testnet
+
+---
+
+## 🙌 Acknowledgements
+
+Built for the Arc ecosystem to demonstrate practical on-chain financial management using Solidity, React, Vite, and Ethers.js.
+
+Special thanks to the Arc team and the developer community for providing the infrastructure and tools that made this project possible.
 
 ---
 
